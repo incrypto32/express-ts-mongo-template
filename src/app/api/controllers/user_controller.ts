@@ -12,20 +12,6 @@ export class UserController extends Controller {
   repostories: Repositories;
   repo: UserRepository;
 
-  aadharStorage = multer({
-    storage: multer.diskStorage({
-      destination: async (req, file, cb) => {
-        var des = `public/users/${req.params.id}`;
-        await fs.mkdirp(des);
-        cb(null, "public/users/" + req.params.id);
-      },
-
-      filename: (req, file, cb) => {
-        cb(null, file.fieldname + ".jpg");
-      },
-    }),
-  });
-
   dpStorage = multer({
     storage: multer.diskStorage({
       destination: async (req, file, cb) => {
