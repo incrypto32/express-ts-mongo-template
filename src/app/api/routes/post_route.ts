@@ -9,7 +9,7 @@ export const postRouter: RouterFunction = (workers: Workers): Router => {
     router.get("",controller.root)
     router.post("",controller.root)
     router.post("/add",controller.add)
-    router.put("/:id",controller.update) 
+    router.post("/update/:id",controller.update) 
     router.delete("/:id",controller.delete)
     router.get("/all",controller.getAll)
     router.get("/byId/:id",controller.getOneById)

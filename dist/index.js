@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var server_1 = require("./app/server");
+var config_1 = require("./config/config");
+var configs = config_1.configure();
+console.log("========================== CONFIGS ==========================");
+console.log("" + JSON.stringify(configs, null, 4));
+console.log("=============================================================");
+var server = new server_1.WyfenosServer(configs.port, configs.mongoURI);
+server.start();
